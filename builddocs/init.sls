@@ -1,3 +1,3 @@
 include:
-  - latest
-  - develop
+  - .latest
+  - .develop
