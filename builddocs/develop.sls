@@ -30,4 +30,4 @@ sftp__dev_docs:
     - run
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
            -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c -R
-           /var/salt/develop/doc/_build/html /en/latest"
+           /var/salt/develop/doc/_build/html /en/develop"
