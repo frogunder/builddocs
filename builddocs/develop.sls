@@ -1,11 +1,11 @@
-checkout_repo:
+checkout_dev_repo:
   git:
     - latest
     - name: https://github.com/saltstack/salt.git
     - rev: develop
     - target: /var/salt/develop
 
-build_docs:
+build_dev_docs:
   environ:
     - setenv
     - name: SALT_ON_SALTSTACK
@@ -15,17 +15,17 @@ build_docs:
     - name: make html
     - cwd: /var/salt/develop/doc
 
-remove_sources:
+remove_dev_sources:
   file:
     - absent
     - name: /var/salt/develop/doc/_build/html/_sources
 
-remove_404:
+remove_dev_404:
   file:
     - absent
     - name: /var/salt/develop/doc/_build/html/404.html
 
-sftp_docs:
+sftp__dev_docs:
   cmd:
     - run
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
