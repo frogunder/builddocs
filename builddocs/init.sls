@@ -1,3 +1,3 @@
 - include:
-  - builddocs/latest
-  - builddocs/develop
+  - latest
+  - develop
