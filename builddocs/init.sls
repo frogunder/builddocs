@@ -1,3 +1,3 @@
-- include:
+include:
   - latest
   - develop
