@@ -31,3 +31,10 @@ sftp_docs:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
            -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c -R
            /var/salt/2015.5/doc/_build/html /en/latest"
+
+sftp_docs2:
+  cmd:
+    - run
+    - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
+           -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c -R
+           /var/salt/2015.5/doc/_build/html /en/2015.5"
