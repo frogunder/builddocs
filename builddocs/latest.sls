@@ -12,7 +12,7 @@ build_docs:
     - value: "true"
   cmd:
     - run
-    - name: make html
+    - name: make html > _build/html/log.txt 2>&1 
     - cwd: /var/salt/2015.5/doc
 
 remove_sources:
