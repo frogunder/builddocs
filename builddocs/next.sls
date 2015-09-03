@@ -1,7 +1,7 @@
 checkout_repo_next:
   git:
     - latest
-    - name: https://github.com/saltstack/salt.git
+    - name: https://github.com/jacobhammons/salt
     - rev: 2015.8
     - target: /var/salt/2015.8
 
