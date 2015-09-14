@@ -1,8 +1,8 @@
 checkout_2014_7_repo:
   git:
     - latest
-    - name: https://github.com/saltstack/salt.git
-    - rev: 2014.7
+    - name: https://github.com/jacobhamons/salt.git
+    - rev: release-docs-2014.7
     - target: /var/salt/2014.7
 
 build_2014_7_docs:
