@@ -1,8 +1,8 @@
 checkout_repo_previous:
   git:
     - latest
-    - name: https://github.com/jacobhammons/salt.git
-    - rev: release-docs-2015.5
+    - name: https://github.com/saltstack/salt.git
+    - rev: 2015.5
     - target: /var/salt/2015.5
 
 build_docs_previous:
