@@ -2,15 +2,15 @@ checkout_previous_repo:
   git:
     - latest
     - name: https://github.com/saltstack/salt.git
-    - rev: 2014.7
-    - target: /var/salt/2014.7
+    - rev: 2015.5
+    - target: /var/salt/2015.5
 
 checkout_latest_repo:
   git:
     - latest
     - name: https://github.com/saltstack/salt.git
-    - rev: 2015.5
-    - target: /var/salt/2015.5
+    - rev: 2015.8
+    - target: /var/salt/2015.8
 
 checkout__develop_repo:
   git:
