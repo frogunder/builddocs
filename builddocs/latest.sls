@@ -12,8 +12,13 @@ build_docs_latest:
     - value: "true"
   cmd:
     - run
-    - name: make html > _build/html/log.txt 2>&1
+    - name: make html > /var/salt/2015.8.log.txt 2>&1
     - cwd: /var/salt/2015.8/doc
+
+copy_log_file_latest:
+  file.copy:
+    - name: /var/salt/2015.8/doc/_build/html/2015.8.log.txt
+    - source: /var/salt/2015.8.log.txt
 
 remove_sources_latest:
   file:
