@@ -12,8 +12,13 @@ build_docs_previous:
     - value: "true"
   cmd:
     - run
-    - name: make html > _build/html/log.txt 2>&1 
+    - name: make html > /var/salt/previous.log.txt 2>&1 
     - cwd: /var/salt/2015.5/doc
+
+copy_log_file_previous:
+  file.copy:
+    - name: /var/salt/2015.5/doc/_build/html/log.txt
+    - source: /var/salt/previous.log.txt
 
 remove_sources_previous:
   file:
