@@ -34,5 +34,5 @@ sftp_docs_previous:
   cmd:
     - run
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c -R
+           -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c --reverse --delete --use-cache
            /var/salt/2015.5/doc/_build/html /en/2015.5"
