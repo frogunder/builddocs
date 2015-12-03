@@ -12,8 +12,13 @@ build_2014_7_docs:
     - value: "true"
   cmd:
     - run
-    - name: make html > _build/html/log.txt 2>&1
+    - name: make html > /var/salt/2014-7.log.txt 2>&1
     - cwd: /var/salt/2014.7/doc
+
+copy_log_file_2014_7:
+  file.copy:
+    - name: /var/salt/2014.7/doc/_build/html/log.txt
+    - source: /var/salt/2014-7.log.txt
 
 remove_2014_7_sources:
   file:
