@@ -25,10 +25,15 @@ remove_sources_dev:
     - absent
     - name: /var/salt/develop/doc/_build/html/_sources
 
-remove_404_dev:
-  file:
-    - absent
+copy_404_dev:
+  file.copy:
     - name: /var/salt/develop/doc/_build/html/404.html
+    - source: salt://builddocs/files/develop/404.html
+
+copy_htaccess_dev:
+  file.copy:
+    - name: /var/salt/develop/doc/_build/html/.htaccess
+    - source: salt://builddocs/files/develop/.htaccess
 
 sftp__docs_dev:
   cmd:
