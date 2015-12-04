@@ -28,12 +28,12 @@ remove_sources_dev:
 copy_404_dev:
   file.copy:
     - name: /var/salt/develop/doc/_build/html/404.html
-    - source: file://var/salt/files/develop/404.html
+    - source: file:///var/salt/files/develop/404.html
 
 copy_htaccess_dev:
   file.copy:
     - name: /var/salt/develop/doc/_build/html/.htaccess
-    - source: file://var/salt/files/develop/.htaccess
+    - source: file:///var/salt/files/develop/.htaccess
 
 sftp__docs_dev:
   cmd:
