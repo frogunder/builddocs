@@ -29,11 +29,13 @@ copy_404_previous:
   file.copy:
     - name: /var/salt/2015.5/doc/_build/html/404.html
     - source: /var/salt/files/2015.5/404.html
+    - force: True
 
 copy_htaccess_previous:
   file.copy:
     - name: /var/salt/2015.5/doc/_build/html/.htaccess
     - source: /var/salt/files/2015.5/.htaccess
+    - force: True
 
 sftp_docs_previous:
   cmd:

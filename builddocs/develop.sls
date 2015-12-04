@@ -29,11 +29,13 @@ copy_404_dev:
   file.copy:
     - name: /var/salt/develop/doc/_build/html/404.html
     - source: /var/salt/files/develop/404.html
+    - force: True
 
 copy_htaccess_dev:
   file.copy:
     - name: /var/salt/develop/doc/_build/html/.htaccess
     - source: /var/salt/files/develop/.htaccess
+    - force: True
 
 sftp__docs_dev:
   cmd:
