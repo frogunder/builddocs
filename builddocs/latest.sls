@@ -25,10 +25,15 @@ remove_sources_latest:
     - absent
     - name: /var/salt/2015.8/doc/_build/html/_sources
 
-remove_404_latest:
-  file:
-    - absent
-    - name: /var/salt/2015.8/doc/_build/html/404.html
+copy_404_latest:
+  file.copy:
+    - name: /var/salt/latest/doc/_build/html/404.html
+    - source: /var/salt/files/latest/404.html
+
+copy_htaccess_latest:
+  file.copy:
+    - name: /var/salt/latest/doc/_build/html/.htaccess
+    - source: /var/salt/files/latest/.htaccess
 
 sftp_docs_latest:
   cmd:

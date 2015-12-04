@@ -25,10 +25,15 @@ remove_sources_previous:
     - absent
     - name: /var/salt/2015.5/doc/_build/html/_sources
 
-remove_404_previous:
-  file:
-    - absent
+copy_404_previous:
+  file.copy:
     - name: /var/salt/2015.5/doc/_build/html/404.html
+    - source: /var/salt/files/2015.5/404.html
+
+copy_htaccess_previous:
+  file.copy:
+    - name: /var/salt/2015.5/doc/_build/html/.htaccess
+    - source: /var/salt/files/2015.5/.htaccess
 
 sftp_docs_previous:
   cmd:
