@@ -1,4 +1,6 @@
-{% if version == 'previous' %}
+
+
+{% if pillar['version'] == 'previous' %}
     {% set codename = 'previous' %}
     {% set revision = '2015.5' %}
     {% set outdir = '2015.5' %}
