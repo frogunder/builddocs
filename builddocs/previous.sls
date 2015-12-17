@@ -12,7 +12,7 @@ build_docs_previous:
     - value: "true"
   cmd:
     - run
-    - name: make html > /var/salt/previous.log.txt 2>&1 
+    - name: make html | ts > /var/salt/previous.log.txt 2>&1 
     - cwd: /var/salt/2015.5/doc
 
 copy_log_file_previous:
