@@ -5,11 +5,6 @@ checkout_repo_previous:
     - rev: 2015.5
     - target: /var/salt/2015.5
 
-remove_log_previous:
-  file:
-    - absent
-    - name: /var/salt/previous.log.txt
-
 build_docs_previous:
   environ:
     - setenv
@@ -17,13 +12,14 @@ build_docs_previous:
     - value: "true"
   cmd:
     - run
-    - name: make html | ts > /var/salt/previous.log.txt 2>&1
+    - name: make html | ts '%F %a %T %Z' > /var/salt/previous.log.txt 2>&1
     - cwd: /var/salt/2015.5/doc
 
 copy_log_file_previous:
   file.copy:
     - name: /var/salt/2015.5/doc/_build/html/log.txt
     - source: /var/salt/previous.log.txt
+    - force: True
 
 remove_sources_previous:
   file:
