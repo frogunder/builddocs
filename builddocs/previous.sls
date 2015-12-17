@@ -1,6 +1,8 @@
-{% set codename = 'previous' %}
-{% set revision = '2015.5' %}
-{% set outdir = '2015.5' %}
+{% if version == 'previous' %}
+    {% set codename = 'previous' %}
+    {% set revision = '2015.5' %}
+    {% set outdir = '2015.5' %}
+{% endif %}
 
 checkout_repo_{{ codename }}:
   git.latest:
