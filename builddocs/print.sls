@@ -22,7 +22,7 @@ build_pdf_{{ codename }}:
     - cwd: /var/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/{{ outdir }}/Salt-{{ revision }}.pdf
+    - name: /var/salt/Salt-{{ revision }}.pdf
     - source: /var/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
     - force: True
 
@@ -32,7 +32,7 @@ build_epub_{{ codename }}:
     - cwd: /var/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/{{ outdir }}/Salt-{{ revision }}.epub
+    - name: /var/salt/Salt-{{ revision }}.epub
     - source: /var/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
 
