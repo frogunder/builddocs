@@ -14,7 +14,7 @@ install_configs:
 
 install_dependencies:
   pkg.installed:
-    pkgs:
+    - pkgs:
       - python-git
       - lftp
       - moreutils
