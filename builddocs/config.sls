@@ -9,7 +9,7 @@ install_fonts:
 
 install_configs:
   file.recurse:
-    - name: /var/salt/files
+    - name: ~/files
     - source: salt://files
 
 install_dependencies:
