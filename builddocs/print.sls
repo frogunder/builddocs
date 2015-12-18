@@ -1,35 +1,38 @@
-build_pdf_latest:
+{% if pillar['version'] == 'previous' %}
+    {% set codename = 'previous' %}
+    {% set revision = '2015.5' %}
+    {% set outdir = '2015.5' %}
+{% endif %}
+
+{% if pillar['version'] == 'latest' %}
+    {% set codename = 'latest' %}
+    {% set revision = '2015.8' %}
+    {% set outdir = 'latest' %}
+{% endif %}
+
+{% if pillar['version'] == 'develop' %}
+    {% set codename = 'develop' %}
+    {% set revision = 'develop' %}
+    {% set outdir = 'develop' %}
+{% endif %}
+
+build_pdf_{{ codename }}:
   cmd.run:
-    - name: make pdf > /var/salt/2015.8.pdf.log.txt 2>&1
-    - cwd: /var/salt/2015.8/doc
+    - name: make pdf | ts '%F (%a) %T %Z:' > /var/salt/{{ codename }}.pdf.log.txt 2>&1
+    - cwd: /var/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/2015.8/Salt-2015.8.pdf
-    - source: /var/salt/2015.8/doc/_build/latex/Salt.pdf
+    - name: /var/salt/{{ outdir }}/Salt-{{ revision }}.pdf
+    - source: /var/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
+    - force: True
 
-build_pdf_previous:
+build_epub_{{ codename }}:
   cmd.run:
-    - name: make pdf > /var/salt/2015.5.pdf.log.txt 2>&1
-    - cwd: /var/salt/2015.5/doc
+    - name: make epub | ts '%F (%a) %T %Z:' > /var/salt/{{ codename }}.epub.log.txt 2>&1
+    - cwd: /var/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/2015.5/Salt-2015.5.pdf
-    - source: /var/salt/2015.5/doc/_build/latex/Salt.pdf
+    - name: /var/salt/{{ outdir }}/Salt-{{ revision }}.epub
+    - source: /var/salt/{{ outdir }}/doc/_build/epub/Salt.epub
+    - force: True
 
-build_epub_latest:
-  cmd.run:
-    - name: make pdf > /var/salt/2015.8.epub.log.txt 2>&1
-    - cwd: /var/salt/2015.8/doc
-
-  file.copy:
-    - name: /var/salt/2015.8/Salt-2015.8.epub
-    - source: /var/salt/2015.8/doc/_build/epub/Salt.epub
-
-build_epub_previous:
-  cmd.run:
-    - name: make epub > /var/salt/2015.5.epub.log.txt 2>&1
-    - cwd: /var/salt/2015.5/doc
-
-  file.copy:
-    - name: /var/salt/2015.5/Salt-2015.5.epub
-    - source: /var/salt/2015.5/doc/_build/epub/Salt.epub
