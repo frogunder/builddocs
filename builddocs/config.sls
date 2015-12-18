@@ -24,6 +24,4 @@ install_dependencies:
 install_sphinx:
   pip.installed:
     - name: sphinx >= 1.3
-    - require:
-      - pkg: python-pip
 
