@@ -51,13 +51,13 @@ remove_htaccess_{{ codename }}:
 copy_404_{{ codename }}:
   file.copy:
     - name: /var/salt/{{ outdir }}/doc/_build/html/404.html
-    - source: salt://files/{{ outdir }}/404.html
+    - source: /root/git/builddocs/builddocs/files/{{ outdir }}/404.html
     - force: True
 
 copy_htaccess_{{ codename }}:
   file.copy:
     - name: /var/salt/{{ outdir }}/doc/_build/html/.htaccess
-    - source: salt://files/{{ outdir }}/.htaccess
+    - source: /root/git/builddocs/builddocs/files/{{ outdir }}/.htaccess
     - force: True
 
 sftp_docs_{{ codename }}:
