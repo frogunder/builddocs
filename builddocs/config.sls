@@ -6,11 +6,13 @@ minion_config:
   file.managed:
     - name: /etc/salt/minion.d/minion.conf
     - source: salt://builddocs/files/minion/minion.conf
+    - makedirs: True
 
 pillar_config:
   file.managed:
     - name: /srv/pillar/top.sls
     - source: salt://builddocs/files/pillar/top.sls
+    - makedirs: True
 
 build_script:
   file.managed:
