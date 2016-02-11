@@ -40,23 +40,13 @@ remove_sources_{{ codename }}:
   file.absent:
     - name: /var/salt/{{ outdir }}/doc/_build/html/_sources
 
-remove_404_{{ codename }}:
-  file.absent:
-    - name: /var/salt/{{ outdir }}/doc/_build/html/404.html
-
-remove_htaccess_{{ codename }}:
-  file.absent:
-    - name: /var/salt/{{ outdir }}/doc/_build/html/.htaccess
-
 copy_404_{{ codename }}:
-  file.copy:
+  file.managed:
     - name: /var/salt/{{ outdir }}/doc/_build/html/404.html
     - source: salt://builddocs/files/404/{{ outdir }}/404.html
-    - force: True
 
 copy_htaccess_{{ codename }}:
-  file.copy:
+  file.managed:
     - name: /var/salt/{{ outdir }}/doc/_build/html/.htaccess
     - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
-    - force: True
 
