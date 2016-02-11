@@ -26,7 +26,7 @@ install_fonts:
 install_dependencies:
   pkg.installed:
     - pkgs:
-      - python-git
+      - git
       - lftp
       - moreutils
       - texlive-xetex
@@ -35,4 +35,8 @@ install_dependencies:
 install_sphinx:
   pip.installed:
     - name: sphinx >= 1.3
+
+install_pythongit:
+  pip.installed:
+    - name: gitpython
 
