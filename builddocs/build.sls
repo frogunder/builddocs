@@ -43,12 +43,12 @@ remove_sources_{{ codename }}:
 copy_404_{{ codename }}:
   file.copy:
     - name: /var/salt/{{ outdir }}/doc/_build/html/404.html
-    - source: salt://builddocs/404/{{ outdir }}/404.html
+    - source: salt://builddocs/files/404/{{ outdir }}/404.html
     - force: True
 
 copy_htaccess_{{ codename }}:
   file.copy:
     - name: /var/salt/{{ outdir }}/doc/_build/html/.htaccess
-    - source: salt://builddocs/404/{{ outdir }}/.htaccess
+    - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
     - force: True
 
