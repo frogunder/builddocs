@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DAYOFWEEK=$(date +"%u")
+
+if [ "${DAYOFWEEK}" -eq 1 ]; then
+    salt-call state.apply builddocs.clean
+fi
+
+salt-call state.apply builddocs pillar='{"version":"previous"}'
+salt-call state.apply builddocs pillar='{"version":"latest"}'
+salt-call state.apply builddocs pillar='{"version":"develop"}'
+
+if [ "${DAYOFWEEK}" -eq 1 ]; then
+    salt-call state.apply builddocs.print pillar='{"version":"previous"}'
+    salt-call state.apply builddocs.print pillar='{"version":"latest"}'
+    salt-call state.apply builddocs.print pillar='{"version":"develop"}'
+fi
