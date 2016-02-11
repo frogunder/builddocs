@@ -31,6 +31,9 @@ install_dependencies:
       - git
       - lftp
       - moreutils
+      - texlive-latex-recommended
+      - texlive-latex-extra
+      - texlive-fonts-recommended
       - texlive-xetex
       - python-pip
 
