@@ -16,37 +16,39 @@
     {% set outdir = 'develop' %}
 {% endif %}
 
+{% set clonepath = '/root' %}
+
 checkout_repo_{{ codename }}:
   git.latest:
     - name: https://github.com/saltstack/salt.git
     - rev: {{ revision }}
-    - target: ~/salt/{{ outdir }}
+    - target: {{ clonepath }}/salt/{{ outdir }}
 
 build_docs_{{ codename }}:
   environ.setenv:
     - name: SALT_ON_SALTSTACK
     - value: "true"
   cmd.run:
-    - name: make html | ts '%F (%a) %T %Z:' > ~/salt/{{ codename }}.log.txt 2>&1
-    - cwd: ~/salt/{{ outdir }}/doc
+    - name: make html | ts '%F (%a) %T %Z:' > {{ clonepath }}/salt/{{ codename }}.log.txt 2>&1
+    - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
 copy_log_file_{{ codename }}:
   file.copy:
-    - name: ~/salt/{{ outdir }}/doc/_build/html/log.txt
-    - source: ~/salt/{{ codename }}.log.txt
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/log.txt
+    - source: {{ clonepath }}/salt/{{ codename }}.log.txt
     - force: True
 
 remove_sources_{{ codename }}:
   file.absent:
-    - name: ~/salt/{{ outdir }}/doc/_build/html/_sources
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/_sources
 
 copy_404_{{ codename }}:
   file.managed:
-    - name: ~/salt/{{ outdir }}/doc/_build/html/404.html
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/404.html
     - source: salt://builddocs/files/404/{{ outdir }}/404.html
 
 copy_htaccess_{{ codename }}:
   file.managed:
-    - name: ~/salt/{{ outdir }}/doc/_build/html/.htaccess
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/.htaccess
     - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
 
