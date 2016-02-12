@@ -39,7 +39,7 @@ install_dependencies:
 
 install_sphinx:
   pip.installed:
-    - name: sphinx >= 1.3
+    - name: sphinx==1.3.3
 
 install_pythongit:
   pip.installed:
