@@ -6,8 +6,8 @@ always_run:
 
 {% if pub %}
 
-test_command:
+conditional_run:
   cmd.run:
-    - name: 'ls -l'
+    - name: echo '{{ pub }}'
 
 {% endif %}
