@@ -52,3 +52,12 @@ copy_htaccess_{{ codename }}:
     - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/.htaccess
     - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
 
+{% set pub = salt[pillar.get]('publish', True) %}
+
+{% if pub %}
+
+test_command
+  cmd.run:
+    name: 'ls -l'
+
+{% end if %}
