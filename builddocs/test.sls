@@ -2,7 +2,7 @@ always_run:
   cmd.run:
     - name: echo 'this ran'
 
-{% set pub = salt['pillar.get']('publish', 'True') %}
+{% set pub = salt['pillar.get']('publish', 'true') %}
 
 {% if pub %}
 
