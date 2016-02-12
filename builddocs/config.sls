@@ -20,11 +20,15 @@ build_script:
     - source: salt://builddocs/files/cron.daily/builddocs
     - mode: 700
 
-install_fonts:
+install_truetype_fonts:
   file.recurse:
     - name: /usr/share/fonts/truetype
-    - source: salt://builddocs/files/fonts 
+    - source: salt://builddocs/files/fonts/truetype
 
+install_opentype_fonts:
+  file.recurse:
+    - name: /usr/share/fonts/opentype
+    - source: salt://builddocs/files/fonts/opentype
 install_dependencies:
   pkg.installed:
     - pkgs:
