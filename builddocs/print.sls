@@ -16,23 +16,24 @@
     {% set outdir = 'develop' %}
 {% endif %}
 
+{% set clonepath = '/root' %}
+
 build_pdf_{{ codename }}:
   cmd.run:
-    - name: make pdf | ts '%F (%a) %T %Z:' > /var/salt/{{ codename }}.pdf.log.txt 2>&1
-    - cwd: /var/salt/{{ outdir }}/doc
+    - name: make pdf | ts '%F (%a) %T %Z:' > {{ clonepath }}/salt/{{ codename }}.pdf.log.txt 2>&1
+    - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/Salt-{{ revision }}.pdf
-    - source: /var/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
+    - name: {{ clonepath }}/salt/Salt-{{ revision }}.pdf
+    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
     - force: True
 
 build_epub_{{ codename }}:
   cmd.run:
-    - name: make epub | ts '%F (%a) %T %Z:' > /var/salt/{{ codename }}.epub.log.txt 2>&1
-    - cwd: /var/salt/{{ outdir }}/doc
+    - name: make epub | ts '%F (%a) %T %Z:' > {{ clonepath }}/salt/{{ codename }}.epub.log.txt 2>&1
+    - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: /var/salt/Salt-{{ revision }}.epub
-    - source: /var/salt/{{ outdir }}/doc/_build/epub/Salt.epub
+    - name: {{ clonepath }}/salt/Salt-{{ revision }}.epub
+    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
-
