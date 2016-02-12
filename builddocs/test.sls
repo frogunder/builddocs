@@ -1,6 +1,6 @@
 always_run:
   cmd.run:
-    name: echo 'this ran'
+    - name: echo 'this ran'
 
 {% set pub = salt['pillar.get']('publish', 'True') %}
 
@@ -8,6 +8,6 @@ always_run:
 
 test_command:
   cmd.run:
-    name: 'ls -l'
+    - name: 'ls -l'
 
 {% endif %}
