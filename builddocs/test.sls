@@ -4,7 +4,7 @@ always_run:
 
 {% set pub = salt['pillar.get']('publish', 'true') %}
 
-{% if pub == true  %}
+{% if pub == 'true' %}
 
 conditional_run:
   cmd.run:
