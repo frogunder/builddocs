@@ -22,7 +22,7 @@ build_script:
 
 install_fonts:
   file.recurse:
-    - name: ~/.fonts
+    - name: /usr/share/fonts/truetype
     - source: salt://builddocs/files/fonts 
 
 install_dependencies:
