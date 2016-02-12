@@ -36,6 +36,11 @@ install_dependencies:
       - texlive-fonts-recommended
       - texlive-xetex
       - python-pip
+      - fontconfig
+
+refresh_font_cache:
+  cmd.run:
+    - name: fc-cache -f -v
 
 install_sphinx:
   pip.installed:
