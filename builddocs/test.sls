@@ -6,7 +6,7 @@ always_run:
 
 {% if pub %}
 
-test_command
+test_command:
   cmd.run:
     name: 'ls -l'
 
