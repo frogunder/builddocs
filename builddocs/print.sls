@@ -37,3 +37,19 @@ build_epub_{{ codename }}:
     - name: {{ clonepath }}/salt/Salt-{{ revision }}.epub
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
+
+{% set pub = salt['pillar.get']('publish', 'true') %}
+
+{% if pub == 'true' %}
+
+sftp_pdf_{{ codename }}:
+  cmd.run:
+    - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ revision }}.pdf /en/pdf/"
+
+sftp_epub_{{ codename }}:
+  cmd.run:
+    - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ revision }}.epub /en/epub/"
+
+{% endif %}

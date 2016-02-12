@@ -14,11 +14,23 @@ pillar_config:
     - source: salt://builddocs/files/pillar/top.sls
     - makedirs: True
 
-build_script:
+build_daily_script:
   file.managed:
     - name: /etc/cron.daily/builddocs
-    - source: salt://builddocs/files/cron.daily/builddocs
-    - mode: 700
+    - source: salt://builddocs/files/scripts/builddocs
+    - mode: 770
+
+build_script:
+  file.managed:
+    - name: /root/build
+    - source: salt://builddocs/files/scripts/build
+    - mode: 770
+
+release_script:
+  file.managed:
+    - name: /root/release
+    - source: salt://builddocs/files/scripts/release
+    - mode: 770
 
 install_truetype_fonts:
   file.recurse:
@@ -29,6 +41,7 @@ install_opentype_fonts:
   file.recurse:
     - name: /usr/share/fonts/opentype
     - source: salt://builddocs/files/fonts/opentype
+
 install_dependencies:
   pkg.installed:
     - pkgs:
