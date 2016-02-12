@@ -1,18 +1,21 @@
 {% if pillar['version'] == 'previous' %}
     {% set codename = 'previous' %}
     {% set revision = '2015.5' %}
+    {% set release = '2015.5.9' %}
     {% set outdir = '2015.5' %}
 {% endif %}
 
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
     {% set revision = '2015.8' %}
+    {% set release = '2015.8.5' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
 {% if pillar['version'] == 'develop' %}
     {% set codename = 'develop' %}
     {% set revision = 'develop' %}
+    {% set release = 'develop' %}
     {% set outdir = 'develop' %}
 {% endif %}
 
@@ -24,7 +27,7 @@ build_pdf_{{ codename }}:
     - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: {{ clonepath }}/salt/Salt-{{ revision }}.pdf
+    - name: {{ clonepath }}/salt/Salt-{{ release }}.pdf
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
     - force: True
 
@@ -34,7 +37,7 @@ build_epub_{{ codename }}:
     - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: {{ clonepath }}/salt/Salt-{{ revision }}.epub
+    - name: {{ clonepath }}/salt/Salt-{{ release }}.epub
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
 
@@ -45,11 +48,11 @@ build_epub_{{ codename }}:
 sftp_pdf_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ revision }}.pdf /en/pdf/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ release }}.pdf /en/pdf/"
 
 sftp_epub_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ revision }}.epub /en/epub/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ release }}.epub /en/epub/"
 
 {% endif %}
