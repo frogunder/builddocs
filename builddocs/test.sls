@@ -10,4 +10,4 @@ test_command
   cmd.run:
     name: 'ls -l'
 
-{% end if %}
+{% endif %}
