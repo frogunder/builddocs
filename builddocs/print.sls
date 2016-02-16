@@ -8,7 +8,7 @@
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
     {% set revision = '2015.8' %}
-    {% set release = '2015.8.5' %}
+    {% set release = '2015.8.7' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
@@ -42,17 +42,18 @@ build_epub_{{ codename }}:
     - force: True
 
 {% set pub = salt['pillar.get']('publish', 'true') %}
+{% set stage = salt['pillar.get']('stage', 'false') %}
 
 {% if pub == 'true' %}
 
 sftp_pdf_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ release }}.pdf /en/pdf/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.pdf /en/pdf/"
 
 sftp_epub_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ release }}.epub /en/epub/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.epub /en/epub/"
 
 {% endif %}
