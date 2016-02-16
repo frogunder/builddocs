@@ -19,6 +19,13 @@
     {% set outdir = 'develop' %}
 {% endif %}
 
+{% if pillar['version'] == 'next' %}
+    {% set codename = 'next' %}
+    {% set revision = '2016.3' %}
+    {% set release = '2016.3.0' %}
+    {% set outdir = 'next' %}
+{% endif %}
+
 {% set clonepath = '/root' %}
 {% set pub = salt['pillar.get']('publish', 'true') %}
 {% set staging = salt['pillar.get']('stage', 'false') %}

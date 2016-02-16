@@ -16,6 +16,12 @@
     {% set outdir = 'develop' %}
 {% endif %}
 
+{% if pillar['version'] == 'next' %}
+    {% set codename = 'next' %}
+    {% set revision = '2016.3' %}
+    {% set outdir = '2016.3' %}
+{% endif %}
+
 {% set clonepath = '/root' %}
 
 checkout_repo_{{ codename }}:
