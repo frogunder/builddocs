@@ -49,11 +49,11 @@ build_epub_{{ codename }}:
 sftp_pdf_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/salt/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.pdf /en/pdf/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;put {{ clonepath }}/salt/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.pdf /en/pdf/"
 
 sftp_epub_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;cp {{ clonepath }}/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.epub /en/epub/"
+           -p 2222 sftp://saltstackdocs.wpengine.com;put {{ clonepath }}/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.epub /en/epub/"
 
 {% endif %}
