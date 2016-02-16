@@ -20,6 +20,8 @@
 {% endif %}
 
 {% set clonepath = '/root' %}
+{% set pub = salt['pillar.get']('publish', 'true') %}
+{% set staging = salt['pillar.get']('stage', 'false') %}
 
 build_pdf_{{ codename }}:
   cmd.run:
@@ -40,9 +42,6 @@ build_epub_{{ codename }}:
     - name: {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
-
-{% set pub = salt['pillar.get']('publish', 'true') %}
-{% set staging = salt['pillar.get']('stage', 'false') %}
 
 {% if pub == 'true' %}
 
