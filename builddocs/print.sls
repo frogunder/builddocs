@@ -8,7 +8,7 @@
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
     {% set revision = '2015.8' %}
-    {% set release = '2015.8.7' %}
+    {% set release = '2015.8.5' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
@@ -22,6 +22,14 @@
 {% set clonepath = '/root' %}
 {% set pub = salt['pillar.get']('publish', 'true') %}
 {% set staging = salt['pillar.get']('stage', 'false') %}
+
+remove_pdf_{{ codename }}:
+  file.absent:
+    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
+
+remove_epub_{{ codename }}:
+  file.absent:
+    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
 
 build_pdf_{{ codename }}:
   cmd.run:
