@@ -25,11 +25,11 @@
 
 remove_pdf_{{ codename }}:
   file.absent:
-    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
 
 remove_epub_{{ codename }}:
   file.absent:
-    - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
+    - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
 
 build_pdf_{{ codename }}:
   cmd.run:
