@@ -27,7 +27,7 @@ build_pdf_{{ codename }}:
     - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: {{ clonepath }}/salt/Salt-{{ release }}.pdf
+    - name: {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.pdf
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
     - force: True
 
@@ -37,23 +37,23 @@ build_epub_{{ codename }}:
     - cwd: {{ clonepath }}/salt/{{ outdir }}/doc
 
   file.copy:
-    - name: {{ clonepath }}/salt/Salt-{{ release }}.epub
+    - name: {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
 
 {% set pub = salt['pillar.get']('publish', 'true') %}
-{% set stage = salt['pillar.get']('stage', 'false') %}
+{% set staging = salt['pillar.get']('stage', 'false') %}
 
 {% if pub == 'true' %}
 
 sftp_pdf_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/pdf/ {{ clonepath }}/salt/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.pdf"
+           -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/pdf/ {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.pdf"
 
 sftp_epub_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/epub/ {{ clonepath }}/Salt-{{ release }}{% if stage == 'true' %}-stage{% endif %}.epub"
+           -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/epub/ {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub"
 
 {% endif %}
