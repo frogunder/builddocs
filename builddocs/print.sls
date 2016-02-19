@@ -8,7 +8,7 @@
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
     {% set revision = '2015.8' %}
-    {% set release = '2015.8.5' %}
+    {% set release = '2015.8.7' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
@@ -22,7 +22,7 @@
 {% if pillar['version'] == 'next' %}
     {% set codename = 'next' %}
     {% set revision = '2016.3' %}
-    {% set release = '2016.3.0' %}
+    {% set release = '2016.3.0 Draft' %}
     {% set outdir = 'next' %}
 {% endif %}
 
