@@ -29,6 +29,6 @@ solr schema:
     - source: salt://builddocs/files/solr/schema.xml
 
 restart solr:
-  cmd.shell:
+  cmd.run:
     - name: /opt/solr/bin/solr restart
 
