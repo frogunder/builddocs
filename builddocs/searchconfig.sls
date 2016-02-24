@@ -30,5 +30,5 @@ solr schema:
 
 restart solr:
   cmd.shell:
-    name: /opt/solr/bin/solr restart
+    - name: /opt/solr/bin/solr restart
 
