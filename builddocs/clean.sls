@@ -3,7 +3,7 @@
 clean_docs_latest:
   cmd.run:
     - name: make clean
-    - cwd: {{ clonepath }}/salt/2015.8/doc
+    - cwd: {{ clonepath }}/salt/latest/doc
   file.absent:
     - name: {{ clonepath }}/salt/latest.log.txt
 
