@@ -29,6 +29,7 @@ checkout_repo_{{ codename }}:
     - name: https://github.com/saltstack/salt.git
     - rev: {{ revision }}
     - target: {{ clonepath }}/salt/{{ outdir }}
+    - force_checkout: True
 
 build_docs_{{ codename }}:
   environ.setenv:
