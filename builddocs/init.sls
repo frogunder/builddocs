@@ -1,12 +1,12 @@
 {% if pillar['version'] == 'previous' %}
     {% set codename = 'previous' %}
-    {% set revision = '2015.5' %}
-    {% set outdir = '2015.5' %}
+    {% set revision = '2015.8' %}
+    {% set outdir = '2015.8' %}
 {% endif %}
 
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
-    {% set revision = '2015.8' %}
+    {% set revision = '2016.3' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
@@ -18,8 +18,8 @@
 
 {% if pillar['version'] == 'next' %}
     {% set codename = 'next' %}
-    {% set revision = '2016.3' %}
-    {% set outdir = '2016.3' %}
+    {% set revision = 'develop' %}
+    {% set outdir = 'develop' %}
 {% endif %}
 
 {% set clonepath = '/root' %}
@@ -70,3 +70,4 @@ sftp_docs_{{ codename }}:
            {{ clonepath }}/salt/{{ outdir }}/doc/_build/html /en/{{ outdir }}"
 
 {% endif %}
+

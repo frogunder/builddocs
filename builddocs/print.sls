@@ -1,14 +1,14 @@
 {% if pillar['version'] == 'previous' %}
     {% set codename = 'previous' %}
-    {% set revision = '2015.5' %}
-    {% set release = '2015.5.10' %}
+    {% set revision = '2015.8' %}
+    {% set release = '2015.8.10' %}
     {% set outdir = '2015.5' %}
 {% endif %}
 
 {% if pillar['version'] == 'latest' %}
     {% set codename = 'latest' %}
-    {% set revision = '2015.8' %}
-    {% set release = '2015.8.8' %}
+    {% set revision = '2016.0' %}
+    {% set release = '2016.3.0' %}
     {% set outdir = 'latest' %}
 {% endif %}
 
@@ -21,8 +21,8 @@
 
 {% if pillar['version'] == 'next' %}
     {% set codename = 'next' %}
-    {% set revision = '2016.3' %}
-    {% set release = '2016.3.0 Draft' %}
+    {% set revision = 'develop' %}
+    {% set release = 'develop' %}
     {% set outdir = 'next' %}
 {% endif %}
 
@@ -71,3 +71,4 @@ sftp_epub_{{ codename }}:
            -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/epub/ {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub"
 
 {% endif %}
+
