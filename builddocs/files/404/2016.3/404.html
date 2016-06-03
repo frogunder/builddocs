@@ -18,65 +18,92 @@
         <meta name="google-site-verification" content="1Y-ojT3ndjxA9coB77iUDyXPWxeuQ3T4_r0j-QG6QHg" />
 
         
-        <link rel="stylesheet" href="/en/2016.3/_static/css/core.min.css">
-        <link rel="stylesheet" href="/en/2016.3/_static/css/webhelp.min_v1.4.4.css">
-            <link rel="shortcut icon" href="/en/2016.3/_static/favicon.ico">
+        <link rel="stylesheet" href="/en/latest/_static/css/core.min.css">
+        <link rel="stylesheet" href="/en/latest/_static/css/webhelp.min_v1.4.5.css">
+            <link rel="shortcut icon" href="/en/latest/_static/favicon.ico">
 
         <!--[if lt IE 9]>
-        <script src="/en/2016.3/_static/js/respond.min.js"></script>
+        <script src="/en/latest/_static/js/respond.min.js"></script>
         <![endif]-->
-        <link rel="top" title="" href="/en/2016.3/index.html">
+        <link rel="top" title="" href="/en/latest/index.html">
     </head>
 
     <body class="index">
         <!--[if lt IE 8]>
             <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser.</a></p>
         <![endif]-->
+
         <div id="wrapper">
+            <!--start navbar-->
+            <nav id="globalNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="http://saltstack.com/" target="_blank"><img src="/en/latest/_static/images/saltstack.svg" class="nolightbox" height="40px" width="170px"></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="nav navbar-nav">
+                <li><a href="/en/latest/">Documentation</a></li>
+                <li><a href="/en/getstarted/">Tutorials</a></li>
+                <li><a href="/en/latest/contents.html">Reference Guide</a></li>
+                <li><a href="https://repo.saltstack.com">Downloads</a></li>
+                <li><a href="/en/latest/topics/development/">Develop</a></li>
+                            <!--<li><a href="/en/2016.3/faq/">FAQ</a></li>
+                            <li><a href="/en/2016.3/samples/">Code Samples</a></li>-->
+                            <!--                <li><a href="https://repo.saltstack.com" target="_blank">Downloads</a></li>-->
+                            <!--<li><a href="http://saltstack.com/training" target="_blank">Training</a></li>
+                            <li><a href="http://saltstack.com/support" target="_blank">Support</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--end navbar-->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
+
+                    <!--start navbar-->
                     <div class="row">
                         <div class="col-sm-12 col-md-11 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                            <!--start navbar-->
-                            <nav class="navbar navbar-default">
-                                <div class="navbar-header">
-                                    <button type="button" class="pull-left navbar-toggle collapsed" id="menu-toggle"><span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <ul id="header-nav" class="nav navbar-nav">
+                            <nav id="localnav">
+                                <ul class="nav navbar-nav">
         <li>
-            <a href="/en/2016.3/contents.html" title="Table of Contents">Table of Contents</a>
+            <a href="/en/latest/contents.html" title="Table of Contents">Table of Contents</a>
             
         </li>
         <li>
-            <a href="/en/2016.3/glossary.html" title="Glossary">Glossary</a>
+            <a href="/en/latest/glossary.html" title="Glossary">Glossary</a>
             
         </li>
         <li>
-            <a href="/en/2016.3/salt-modindex.html" title="Salt Module Index">all salt modules</a>
+            <a href="/en/latest/salt-modindex.html" title="Salt Module Index">all salt modules</a>
             
         </li>
         <li>
-            <a href="/en/2016.3/genindex.html" title="General Index">index</a>
+            <a href="/en/latest/genindex.html" title="General Index">index</a>
             
         </li> 
 
-                                        
-                                        <li><a href="/en/getstarted/" target="_blank">Get Started</a></li>
-                                        
-
-                                        
-                                    </ul>
-                                </div>
+                                    
+                                    <li><a class="icon-dl" href="/en/pdf/Salt-2016.3.0.pdf"><img height="25" width="25" class="nolightbox" src="/en/latest/_static/images/pdf_icon.svg"></a></li>
+                                    <li><a class="icon-dl" href="/en/epub/Salt-2016.3.0.epub"><img height="25" width="18" class="nolightbox" src="/en/latest/_static/images/epub_icon.svg"></a></li>
+                                    
+                                </ul>
                             </nav>
-                            <!--end navbar-->
+                        </div>
+                    </div>
+                    <!--end navbar-->
 
-                            
-                            <div id="dev-notification">
-                                <div class="alert alert-warning dev-notification-text" role="alert"><i class="glyphicon glyphicon-cog"></i> You are viewing docs from the develop branch, some of these features are not yet released.</div>
-                            </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-11 col-md-offset-1 col-lg-10 col-lg-offset-1">
+
                             
 
                             
@@ -88,11 +115,11 @@
 pages instead:</p>
 
 <ul>
-    <li><a href="/en/2016.3/index.html">Home page</a></li>
-    <li><a href="/en/2016.3/topics/community.html">Community</a></li>
-    <li><a href="/en/2016.3/search.html">Search</a></li>
-    <li><a href="/en/2016.3/py-modindex.html">Salt module index</a></li>
-    <li><a href="/en/2016.3/home.html">Salt Documentation</a></li>
+    <li><a href="/en/latest/index.html">Home page</a></li>
+    <li><a href="/en/latest/topics/community.html">Community</a></li>
+    <li><a href="/en/latest/search.html">Search</a></li>
+    <li><a href="/en/latest/py-modindex.html">Salt module index</a></li>
+    <li><a href="/en/latest/home.html">Salt Documentation</a></li>
 </ul>
 
                             </div>
@@ -107,9 +134,9 @@ pages instead:</p>
                             <div class="col-sm-6">
 
                                 
-                                <p>You are viewing docs built from a recent snapshot of the develop branch. Switch to docs for the latest stable release, <a data-container="body" data-toggle="tooltip" data-placement="bottom" title="Docs for the latest stable release" href="/en/latest/">2015.8.7</a>.</p>
-                                
+                                <p>You are viewing docs for the latest stable release, 2016.3.0. Switch to docs for the previous stable release, <a data-container="body" data-toggle="tooltip" data-placement="bottom" title="Docs for the previous stable release" href="/en/2015.8/">2015.8.10</a>, or to a recent doc build from the <a data-container="body" data-toggle="tooltip" data-placement="bottom" title="Latest docs from the develop branch" href="/en/develop/">develop</a> branch.</p>
 
+                                
                                 <br>
                                 <p><a href="http://saltstack.com">saltstack.com</a></p>
 
@@ -117,7 +144,7 @@ pages instead:</p>
 
                             <div class="col-sm-6">
 
-                                 <a href="http://saltstack.com/support" target="_blank"><img class="nolightbox footer-banner center" src="/en/2016.3/_static/images/footer-support.png"/></a>
+                                 <a href="http://saltstack.com/support" target="_blank"><img class="nolightbox footer-banner center" src="/en/latest/_static/images/footer-support.png"/></a>
 
 
                             </div>
@@ -131,23 +158,28 @@ pages instead:</p>
             <div id="sidebar-wrapper">
             <div id="sidebar-static">
 
-                <a class="ss-logo" href="http://saltstack.com"><img width="250" height="63" class="nolightbox sidebar-logo" src="/en/2016.3/_static/images/saltstack_logo.svg"></a>
+<!--                <a class="ss-logo" href="http://saltstack.com"><img width="250" height="63" class="nolightbox sidebar-logo" src="_static/images/saltstack_logo.svg"></a>
 
                 
 
                 
-                <a href="http://saltstack.com/support" target="_blank"><img class="nolightbox sidebar-banner center" src="/en/2016.3/_static/images/banner-support.png"/></a>
+                <a href="http://saltstack.com/support" target="_blank"><img class="nolightbox sidebar-banner center" src="_static/images/banner-support.png"/></a>
+                -->
+
+
                 
 
-                <div class="releaselinks versions develop">
+                <div class="releaselinks versions latest">
 
-                <a class="btn btn-secondary" id="previous" title="Switch to docs for the previous stable release" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/2015.5/">2015.5.9</a>
+                <a class="btn btn-secondary" id="previous" title="Switch to docs for the previous stable release" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/2015.8/">2015.8.x</a>
 
-                <a  class="btn btn-secondary" id="latest" title="Switch to docs for the latest stable release" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/latest/">2015.8.7</a>
+                <a  class="btn btn-secondary active" id="latest" title="View release notes" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/latest/">2016.3.x <i class="glyphicon glyphicon-ok"></i></a>
 
-                <a  class="btn btn-secondary active" id="develop" title="View all release notes" title="Switch to docs built recently from the develop branch" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/2016.3/">Develop <i class="glyphicon glyphicon-ok"></i></a>
+                <a  class="btn btn-secondary" id="develop" title="Switch to docs built recently from the develop branch" data-container="body" data-toggle="tooltip" data-placement="bottom" href="/en/develop/">Develop</a>
 
                 </div>
+
+                
 
                 
 
@@ -163,25 +195,24 @@ pages instead:</p>
                     
                     
                     <ul>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/index.html">SaltStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/installation/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/configuration/index.html">Configuring Salt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/using_salt.html">Using Salt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/execution/index.html">Remote Execution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/states/index.html">Configuration Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/event/index.html">Events &amp; Reactor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/orchestrate/index.html">Orchestration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/ssh/index.html">Salt SSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/cloud/index.html">Salt Cloud</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/proxyminion/index.html">Salt Proxy Minion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/virt/index.html">Salt Virt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/ref/cli/index.html">Command Line Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/ref/index.html">Salt Module Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/api.html">APIs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/topology/index.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/windows/index.html">Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/development/index.html">Developing Salt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="/en/2016.3/topics/releases/index.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/configuration/index.html">Configuring Salt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/using_salt.html">Using Salt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/execution/index.html">Remote Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/states/index.html">Configuration Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/event/index.html">Events &amp; Reactor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/orchestrate/index.html">Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/ssh/index.html">Salt SSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/cloud/index.html">Salt Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/proxyminion/index.html">Salt Proxy Minion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/virt/index.html">Salt Virt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/ref/cli/index.html">Command Line Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/ref/index.html">Salt Module Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/api.html">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/topology/index.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/windows/index.html">Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/development/index.html">Developing Salt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/en/latest/topics/releases/index.html">Release Notes</a></li>
 </ul>
 
                     
@@ -189,20 +220,20 @@ pages instead:</p>
                 </div>
 
                 <div id="sidebar-static-bottom">
-                <div class="text-nowrap">
-                    <!--social icons from http://vervex.deviantart.com/art/somacro-45-300dpi-social-media-icons-267955425-->
+                <!--<div class="text-nowrap">
+                    &lt;!&ndash;social icons from http://vervex.deviantart.com/art/somacro-45-300dpi-social-media-icons-267955425&ndash;&gt;
                     <ul id="social-links" class="list-inline">
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="watch saltstack videos on youtube" href="https://www.youtube.com/user/saltstack" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/youtube-variation.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="view the latest saltstack tweets" href="http://twitter.com/saltstackinc" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/twitter.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="subscribe to the salt users mailing list" href="https://groups.google.com/forum/#!forum/salt-users" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/email.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="download saltstack code from github" href="https://github.com/saltstack/salt" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/github.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="chat in #salt on freenode irc" href="http://webchat.freenode.net/?channels=salt&uio=mj10cnvljjk9dhj1zsyxmd10cnvl83" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/messenger-generic.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="/r/saltstack" href="http://www.reddit.com/r/saltstack/" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/reddit.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="ask a saltstack question on stackoverflow" href="http://stackoverflow.com/questions/tagged/salt-stack" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/stackoverflow.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="join or start a saltstack meetup" href="http://www.meetup.com/find/?keywords=saltstack" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/meetup.png" ></a></li>
-                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="follow saltstack on linkedin" href="http://www.linkedin.com/company/salt-stack-inc" target="_blank"><img class="nolightbox" width="24" src="/en/2016.3/_static/images/linkedin.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="watch saltstack videos on youtube" href="https://www.youtube.com/user/saltstack" target="_blank"><img class="nolightbox" width="24" src="_static/images/youtube-variation.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="view the latest saltstack tweets" href="http://twitter.com/saltstackinc" target="_blank"><img class="nolightbox" width="24" src="_static/images/twitter.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="subscribe to the salt users mailing list" href="https://groups.google.com/forum/#!forum/salt-users" target="_blank"><img class="nolightbox" width="24" src="_static/images/email.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="download saltstack code from github" href="https://github.com/saltstack/salt" target="_blank"><img class="nolightbox" width="24" src="_static/images/github.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="chat in #salt on freenode irc" href="http://webchat.freenode.net/?channels=salt&uio=mj10cnvljjk9dhj1zsyxmd10cnvl83" target="_blank"><img class="nolightbox" width="24" src="_static/images/messenger-generic.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="/r/saltstack" href="http://www.reddit.com/r/saltstack/" target="_blank"><img class="nolightbox" width="24" src="_static/images/reddit.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="ask a saltstack question on stackoverflow" href="http://stackoverflow.com/questions/tagged/salt-stack" target="_blank"><img class="nolightbox" width="24" src="_static/images/stackoverflow.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="join or start a saltstack meetup" href="http://www.meetup.com/find/?keywords=saltstack" target="_blank"><img class="nolightbox" width="24" src="_static/images/meetup.png" ></a></li>
+                        <li><a data-container="body" data-delay='{ "show": 500, "hide": 100 }' data-toggle="tooltip" data-placement="top" title="follow saltstack on linkedin" href="http://www.linkedin.com/company/salt-stack-inc" target="_blank"><img class="nolightbox" width="24" src="_static/images/linkedin.png" ></a></li>
                     </ul>
-                </div>
+                </div>-->
                 </div>
             </div>
             <!--end sidebar-->
@@ -212,7 +243,7 @@ pages instead:</p>
     <script>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:    './',
-            VERSION:     '2015.8.7',
+            VERSION:     '2016.3.0',
             SEARCH_CX:   '004624818632696854117:yfmprrbw3pk',
             COLLAPSE_INDEX: false,
             FILE_SUFFIX: '.html',
@@ -220,9 +251,9 @@ pages instead:</p>
         };
     </script>
 
-    <script src="/en/2016.3/_static/js/core.min.js"></script>
+    <script src="/en/latest/_static/js/core.min.js"></script>
 
-    <script src="/en/2016.3/_static/js/webhelp.min_v1.4.3.js"></script>
+    <script src="/en/latest/_static/js/webhelp.min_v1.4.4.js"></script>
 
         
 
