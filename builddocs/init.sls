@@ -66,7 +66,7 @@ copy_htaccess_{{ codename }}:
 sftp_docs_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
-           -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c --reverse --delete --use-cache
+           -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c --reverse --use-cache
            {{ clonepath }}/salt/{{ outdir }}/doc/_build/html /en/{{ outdir }}"
 
 {% endif %}
