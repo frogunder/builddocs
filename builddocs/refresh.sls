@@ -4,16 +4,16 @@ checkout_previous_repo:
   git:
     - latest
     - name: https://github.com/saltstack/salt.git
-    - rev: 2015.5
-    - target: {{ clonepath }}/salt/2015.5
+    - rev: 2015.8
+    - target: {{ clonepath }}/salt/2015.8
     - force_checkout: True
 
 checkout_latest_repo:
   git:
     - latest
     - name: https://github.com/saltstack/salt.git
-    - rev: 2015.8
-    - target: {{ clonepath }}/salt/2015.8
+    - rev: 2016.3
+    - target: {{ clonepath }}/salt/latest
     - force_checkout: True
 
 checkout__develop_repo:
