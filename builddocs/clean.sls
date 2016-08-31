@@ -21,9 +21,3 @@ clean_docs_dev:
   file.absent:
     - name: {{ clonepath }}/salt/develop.log.txt
 
-clean_docs_next:
-  cmd.run:
-    - name: make clean
-    - cwd: {{ clonepath }}/salt/2016.3/doc
-  file.absent:
-    - name: {{ clonepath }}/salt/next.log.txt
