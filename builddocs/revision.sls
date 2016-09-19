@@ -1,5 +1,8 @@
 {% set revision = salt['pillar.get']('revision', '') %}
+{% set checkout = salt['pillar.get']('checkout', 'true') %}
 {% set clonepath = '/root' %}
+
+{% if co == 'true' %}
 
 checkout_repo_{{ revision }}:
   git.latest:
@@ -7,6 +10,8 @@ checkout_repo_{{ revision }}:
     - rev: {{ revision }}
     - target: {{ clonepath }}/salt/{{ revision }}
     - force_checkout: True
+
+{% endif %}
 
 build_docs_{{ revision }}:
   cmd.run:
