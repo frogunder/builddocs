@@ -2,7 +2,7 @@
 {% set checkout = salt['pillar.get']('checkout', 'true') %}
 {% set clonepath = '/root' %}
 
-{% if co == 'true' %}
+{% if checkout == 'true' %}
 
 checkout_repo_{{ revision }}:
   git.latest:
