@@ -64,7 +64,3 @@ install_sphinx:
   pip.installed:
     - name: sphinx==1.4.5
 
-install_pythongit:
-  pip.installed:
-    - name: gitpython
-
