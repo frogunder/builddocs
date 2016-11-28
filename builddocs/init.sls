@@ -18,8 +18,8 @@
 
 {% if pillar['version'] == 'next' %}
     {% set codename = 'next' %}
-    {% set revision = '2016.11' %}
-    {% set outdir = '2016.11' %}
+    {% set revision = 'develop' %}
+    {% set outdir = 'develop' %}
 {% endif %}
 
 {% set clonepath = '/root' %}
