@@ -27,9 +27,11 @@
 {% endif %}
 
 {% set clonepath = '/root' %}
-{% set pub = salt['pillar.get']('publish', 'true') %}
+{% set pub = salt['pillar.get']('publish', False) %}
+{% set prepub = salt['pillar.get']('prepublish', True) %}
 {% set staging = salt['pillar.get']('stage', 'false') %}
 
+{% if prepub %}
 remove_pdf_{{ codename }}:
   file.absent:
     - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
@@ -58,7 +60,7 @@ build_epub_{{ codename }}:
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
 
-{% if pub == 'true' %}
+{% elif pub %}
 
 sftp_pdf_{{ codename }}:
   cmd.run:
@@ -71,4 +73,3 @@ sftp_epub_{{ codename }}:
            -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/epub/ {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub"
 
 {% endif %}
-
