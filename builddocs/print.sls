@@ -27,11 +27,11 @@
 {% endif %}
 
 {% set clonepath = '/root' %}
-{% set pub = salt['pillar.get']('publish', False) %}
-{% set prepub = salt['pillar.get']('prepublish', True) %}
+{% set publish = salt['pillar.get']('publish', False) %}
+{% set build = salt['pillar.get']('build', True) %}
 {% set staging = salt['pillar.get']('stage', 'false') %}
 
-{% if prepub %}
+{% if build %}
 remove_pdf_{{ codename }}:
   file.absent:
     - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/latex/Salt.pdf
@@ -60,7 +60,7 @@ build_epub_{{ codename }}:
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
 
-{% elif pub %}
+{% elif publish %}
 
 sftp_pdf_{{ codename }}:
   cmd.run:
