@@ -22,8 +22,11 @@
     {% set outdir = 'develop' %}
 {% endif %}
 
+{% set publish = salt['pillar.get']('publish', False) %}
+{% set build = salt['pillar.get']('build', True) %}
 {% set clonepath = '/root' %}
 
+{% if build %}
 checkout_repo_{{ codename }}:
   git.latest:
     - name: https://github.com/saltstack/salt.git
@@ -59,9 +62,8 @@ copy_htaccess_{{ codename }}:
     - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/.htaccess
     - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
 
-{% set pub = salt['pillar.get']('publish', 'true') %}
 
-{% if pub == 'true' %}
+{% elif publish %}
 
 sftp_docs_{{ codename }}:
   cmd.run:
@@ -70,4 +72,3 @@ sftp_docs_{{ codename }}:
            {{ clonepath }}/salt/{{ outdir }}/doc/_build/html /en/{{ outdir }}"
 
 {% endif %}
-
