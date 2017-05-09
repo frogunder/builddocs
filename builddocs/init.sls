@@ -61,14 +61,12 @@ copy_htaccess_{{ codename }}:
   file.managed:
     - name: {{ clonepath }}/salt/{{ outdir }}/doc/_build/html/.htaccess
     - source: salt://builddocs/files/404/{{ outdir }}/.htaccess
+{% endif %}
 
-
-{% elif publish %}
-
+{% if publish %}
 sftp_docs_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
            -p 2222 sftp://saltstackdocs.wpengine.com;mirror -c --reverse --use-cache
            {{ clonepath }}/salt/{{ outdir }}/doc/_build/html /en/{{ outdir }}"
-
 {% endif %}

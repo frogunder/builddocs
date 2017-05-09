@@ -59,9 +59,9 @@ build_epub_{{ codename }}:
     - name: {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub
     - source: {{ clonepath }}/salt/{{ outdir }}/doc/_build/epub/Salt.epub
     - force: True
+{% endif %}
 
-{% elif publish %}
-
+{% if publish %}
 sftp_pdf_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
@@ -71,5 +71,4 @@ sftp_epub_{{ codename }}:
   cmd.run:
     - name: lftp -c "open -u {{pillar['ftpusername']}},{{pillar['ftppassword']}}
            -p 2222 sftp://saltstackdocs.wpengine.com;put -O /en/epub/ {{ clonepath }}/salt/Salt-{{ release }}{% if staging == 'true' %}-stage{% endif %}.epub"
-
 {% endif %}
