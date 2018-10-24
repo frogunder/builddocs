@@ -1,7 +1,7 @@
 {% if pillar['version'] == 'previous' %}
     {% set codename = 'previous' %}
     {% set revision = '2017.7' %}
-    {% set release = '2017.7.7' %}
+    {% set release = '2017.7.8' %}
     {% set outdir = '2017.7' %}
 {% endif %}
 
