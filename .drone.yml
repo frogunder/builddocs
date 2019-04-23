@@ -1,0 +1,44 @@
+kind: pipeline
+name: build develop
+
+steps:
+- name: build
+  image: ubuntu
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: develop
+    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: develop
+  commands:
+  - ./build.sh
+---
+kind: pipeline
+name: build latest
+
+steps:
+- name: build
+  image: ubuntu
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2019.2
+    WEBSITE_RELEASE: latest
+    WEBSITE_POINT_RELEASE: 2019.2.0
+  commands:
+  - ./build.sh
+---
+kind: pipeline
+name: build 2018.3
+
+steps:
+- name: build
+  image: ubuntu
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2018.3
+    WEBSITE_RELEASE: 2018.3
+    WEBSITE_POINT_RELEASE: 2018.3.4
+  commands:
+  - ./build.sh
