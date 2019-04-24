@@ -1,9 +1,9 @@
 kind: pipeline
-name: build develop
+name: build develop html
 
 steps:
 - name: build
-  image: ubuntu
+  image: "ubuntu:bionic"
   environment:
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -11,14 +11,44 @@ steps:
     WEBSITE_RELEASE: develop
     WEBSITE_POINT_RELEASE: develop
   commands:
-  - ./build.sh
+  - ./build_html.sh
 ---
 kind: pipeline
-name: build latest
+name: build develop pdf
 
 steps:
 - name: build
-  image: ubuntu
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: develop
+    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: develop
+  commands:
+  - ./build_pdf.sh
+---
+kind: pipeline
+name: build develop epub
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: develop
+    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: develop
+  commands:
+  - ./build_epub.sh
+---
+kind: pipeline
+name: build latest html
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
   environment:
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -26,14 +56,44 @@ steps:
     WEBSITE_RELEASE: latest
     WEBSITE_POINT_RELEASE: 2019.2.0
   commands:
-  - ./build.sh
+  - ./build_html.sh
 ---
 kind: pipeline
-name: build 2018.3
+name: build latest pdf
 
 steps:
 - name: build
-  image: ubuntu
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2019.2
+    WEBSITE_RELEASE: latest
+    WEBSITE_POINT_RELEASE: 2019.2.0
+  commands:
+  - ./build_pdf.sh
+---
+kind: pipeline
+name: build latest epub
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2019.2
+    WEBSITE_RELEASE: latest
+    WEBSITE_POINT_RELEASE: 2019.2.0
+  commands:
+  - ./build_epub.sh
+---
+kind: pipeline
+name: build 2018.3 html
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
   environment:
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -41,4 +101,34 @@ steps:
     WEBSITE_RELEASE: 2018.3
     WEBSITE_POINT_RELEASE: 2018.3.4
   commands:
-  - ./build.sh
+  - ./build_html.sh
+---
+kind: pipeline
+name: build 2018.3 pdf
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2018.3
+    WEBSITE_RELEASE: 2018.3
+    WEBSITE_POINT_RELEASE: 2018.3.4
+  commands:
+  - ./build_pdf.sh
+---
+kind: pipeline
+name: build 2018.3 epub
+
+steps:
+- name: build
+  image: "ubuntu:bionic"
+  environment:
+    WEBSITE_PASSWORD:
+      from_secret: website_password
+    DOC_BRANCH: 2018.3
+    WEBSITE_RELEASE: 2018.3
+    WEBSITE_POINT_RELEASE: 2018.3.4
+  commands:
+  - ./build_epub.sh
