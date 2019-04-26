@@ -2,7 +2,7 @@
 
 ln -nsf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 apt-get update
-apt-get install -y python3-pip lftp git openssh-client fontconfig texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-xetex make latexmk
+apt-get install -y python3-pip lftp git openssh-client fontconfig make
 pip3 install sphinx==1.5.6
 git clone --depth 1 -b ${DOC_BRANCH} https://github.com/saltstack/salt /root/salt
 mkdir -p /usr/share/fonts/truetype
