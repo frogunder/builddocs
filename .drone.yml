@@ -11,12 +11,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: develop
     WEBSITE_RELEASE: develop
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -31,12 +34,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
+  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: develop
     WEBSITE_RELEASE: develop
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -51,12 +57,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
+  - ./publish_epub.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: develop
     WEBSITE_RELEASE: develop
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -71,12 +80,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.0
     WEBSITE_RELEASE: latest
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -91,12 +103,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
+  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.0
     WEBSITE_RELEASE: latest
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -111,12 +126,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
+  - ./publish_epub.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.0
     WEBSITE_RELEASE: latest
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -131,12 +149,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2018.3
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2018.3.4
     WEBSITE_RELEASE: 2018.3
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -151,12 +172,15 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
+  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: 2018.3
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2018.3.4
     WEBSITE_RELEASE: 2018.3
+    WEBSITE_USER:
+      from_secret: website_user
 
 ---
 kind: pipeline
@@ -171,11 +195,14 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
+  - ./publish_epub.sh
   environment:
     DOC_BRANCH: 2018.3
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2018.3.4
     WEBSITE_RELEASE: 2018.3
+    WEBSITE_USER:
+      from_secret: website_user
 
 ...
