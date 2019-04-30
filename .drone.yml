@@ -11,7 +11,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
-  - ./publish_html.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -34,7 +33,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
-  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -57,7 +55,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
-  - ./publish_epub.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -80,7 +77,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
-  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -103,7 +99,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
-  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -126,7 +121,6 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
-  - ./publish_epub.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:

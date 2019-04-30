@@ -25,6 +25,6 @@ then
 fi
 
 ./publish_env.sh
-lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://10.27.56.107;mirror -v -c --delete --reverse --use-cache /root/salt/doc/_build/html/ref /en/${WEBSITE_RELEASE}/ref"
-lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://10.27.56.107;mirror -v -c --delete --reverse --use-cache /root/salt/doc/_build/html/topics /en/${WEBSITE_RELEASE}/topics"
-lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://10.27.56.107;mirror -v -c --reverse --use-cache /root/salt/doc/_build/html /en/${WEBSITE_RELEASE}"
+lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://saltstackdocs.wpengine.com;mirror -v -c --delete --reverse --use-cache /root/salt/doc/_build/html/ref /en/${WEBSITE_RELEASE}/ref"
+lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://saltstackdocs.wpengine.com;mirror -v -c --delete --reverse --use-cache /root/salt/doc/_build/html/topics /en/${WEBSITE_RELEASE}/topics"
+lftp -c "open -u ${WEBSITE_USER},${WEBSITE_PASSWORD} -p 2222 sftp://saltstackdocs.wpengine.com;mirror -v -c --reverse --use-cache /root/salt/doc/_build/html /en/${WEBSITE_RELEASE}"
