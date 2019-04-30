@@ -21,6 +21,7 @@ sed -i "s#\"_images#\"/en/${WEBSITE_RELEASE}/_images#g" /root/salt/doc/_build/ht
 sed -i "s#\"index.html#\"/en/${WEBSITE_RELEASE}/index.html#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"py-modindex.html#\"/en/${WEBSITE_RELEASE}/py-modindex.html#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"ref#\"/en/${WEBSITE_RELEASE}/ref#g" /root/salt/doc/_build/html/404.html
+sed -i "s#\"salt-modindex.html#\"/en/${WEBSITE_RELEASE}/salt-modindex.html#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"search.html#\"/en/${WEBSITE_RELEASE}/search.html#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"security#\"/en/${WEBSITE_RELEASE}/security#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"_static#\"/en/${WEBSITE_RELEASE}/_static#g" /root/salt/doc/_build/html/404.html
