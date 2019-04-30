@@ -11,6 +11,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -19,6 +20,11 @@ steps:
     WEBSITE_RELEASE: develop
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -33,6 +39,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
+  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -41,6 +48,11 @@ steps:
     WEBSITE_RELEASE: develop
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -55,6 +67,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
+  - ./publish_epub.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:
@@ -63,6 +76,11 @@ steps:
     WEBSITE_RELEASE: develop
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -77,6 +95,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -85,6 +104,11 @@ steps:
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -99,6 +123,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_pdf.sh
+  - ./publish_pdf.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -107,6 +132,11 @@ steps:
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -121,6 +151,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_epub.sh
+  - ./publish_epub.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -129,6 +160,11 @@ steps:
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ---
 kind: pipeline
@@ -153,6 +189,11 @@ steps:
     WEBSITE_USER:
       from_secret: website_user
 
+trigger:
+  event:
+    exclude:
+    - pull_request
+
 ---
 kind: pipeline
 name: build 2018.3 pdf
@@ -176,6 +217,11 @@ steps:
     WEBSITE_USER:
       from_secret: website_user
 
+trigger:
+  event:
+    exclude:
+    - pull_request
+
 ---
 kind: pipeline
 name: build 2018.3 epub
@@ -198,5 +244,10 @@ steps:
     WEBSITE_RELEASE: 2018.3
     WEBSITE_USER:
       from_secret: website_user
+
+trigger:
+  event:
+    exclude:
+    - pull_request
 
 ...
