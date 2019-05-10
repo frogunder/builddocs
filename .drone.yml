@@ -11,6 +11,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: develop
     WEBSITE_PASSWORD:

@@ -2,25 +2,25 @@
 
 if [ -z "${WEBSITE_USER}" ]
 then
-	echo "Missing environment variable WEBSITE_USER"
+	echo "ERROR: Missing environment variable WEBSITE_USER"
 	exit 1
 fi
 
 if [ -z "${WEBSITE_PASSWORD}" ]
 then
-	echo "Missing environment variable WEBSITE_PASSWORD"
+	echo "ERROR: Missing environment variable WEBSITE_PASSWORD"
 	exit 1
 fi
 
 if [ -z "${WEBSITE_RELEASE}" ]
 then
-	echo "Missing environment variable WEBSITE_RELEASE"
+	echo "ERROR: Missing environment variable WEBSITE_RELEASE"
 	exit 1
 fi
 
 if [ -z "${WEBSITE_POINT_RELEASE}" ]
 then
-	echo "Missing environment variable WEBSITE_POINT_RELEASE"
+	echo "ERROR: Missing environment variable WEBSITE_POINT_RELEASE"
 	exit 1
 fi
 

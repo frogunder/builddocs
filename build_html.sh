@@ -2,7 +2,7 @@
 
 if [ -z "${WEBSITE_RELEASE}" ]
 then
-	echo "Missing environment variable WEBSITE_RELEASE"
+	echo "ERROR: Missing environment variable WEBSITE_RELEASE"
 	exit 1
 fi
 
@@ -26,6 +26,17 @@ sed -i "s#\"search.html#\"/en/${WEBSITE_RELEASE}/search.html#g" /root/salt/doc/_
 sed -i "s#\"security#\"/en/${WEBSITE_RELEASE}/security#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"_static#\"/en/${WEBSITE_RELEASE}/_static#g" /root/salt/doc/_build/html/404.html
 sed -i "s#\"topics#\"/en/${WEBSITE_RELEASE}/topics#g" /root/salt/doc/_build/html/404.html
+
+# Dealing with this bug: https://github.com/saltstack/salt/issues/52777
+if [ -f /root/salt/doc/_build/html/py-modindex.html ] && [ ! -e /root/salt/doc/_build/html/salt-modindex.html ]
+then
+	cp -n /root/salt/doc/_build/html/py-modindex.html /root/salt/doc/_build/html/salt-modindex.html
+fi
+
+if [ ! -e /root/salt/doc/_build/html/salt-modindex.html ]
+	echo "ERROR: salt-modindex.html is missing"
+	exit 1
+fi
 
 if [ "${WEBSITE_RELEASE}" != "latest" ]
 then
