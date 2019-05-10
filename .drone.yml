@@ -95,6 +95,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2019.2
     WEBSITE_PASSWORD:
@@ -178,6 +179,7 @@ steps:
   image: ubuntu:bionic
   commands:
   - ./build_html.sh
+  - ./publish_html.sh
   environment:
     DOC_BRANCH: 2018.3
     WEBSITE_PASSWORD:
