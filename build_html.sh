@@ -34,6 +34,7 @@ then
 fi
 
 if [ ! -e /root/salt/doc/_build/html/salt-modindex.html ]
+then
 	echo "ERROR: salt-modindex.html is missing"
 	exit 1
 fi
