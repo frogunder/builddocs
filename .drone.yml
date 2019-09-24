@@ -97,10 +97,10 @@ steps:
   - ./build_html.sh
   - ./publish_html.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.0
+    WEBSITE_POINT_RELEASE: 2019.2.1
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
@@ -125,10 +125,10 @@ steps:
   - ./build_pdf.sh
   - ./publish_pdf.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.0
+    WEBSITE_POINT_RELEASE: 2019.2.1
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
@@ -153,10 +153,10 @@ steps:
   - ./build_epub.sh
   - ./publish_epub.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.0
+    WEBSITE_POINT_RELEASE: 2019.2.1
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
