@@ -100,7 +100,7 @@ steps:
     DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.1
+    WEBSITE_POINT_RELEASE: 2019.2.2
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
@@ -128,7 +128,7 @@ steps:
     DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.1
+    WEBSITE_POINT_RELEASE: 2019.2.2
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
@@ -156,7 +156,7 @@ steps:
     DOC_BRANCH: 2019.2.1
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: 2019.2.1
+    WEBSITE_POINT_RELEASE: 2019.2.2
     WEBSITE_RELEASE: latest
     WEBSITE_USER:
       from_secret: website_user
