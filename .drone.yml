@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: build develop html
+name: build master html
 
 platform:
   os: linux
@@ -13,11 +13,11 @@ steps:
   - ./build_html.sh
   - ./publish_html.sh
   environment:
-    DOC_BRANCH: develop
+    DOC_BRANCH: master
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: develop
-    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: master
+    WEBSITE_RELEASE: master
     WEBSITE_USER:
       from_secret: website_user
 
@@ -28,7 +28,7 @@ trigger:
 
 ---
 kind: pipeline
-name: build develop pdf
+name: build master pdf
 
 platform:
   os: linux
@@ -41,11 +41,11 @@ steps:
   - ./build_pdf.sh
   - ./publish_pdf.sh
   environment:
-    DOC_BRANCH: develop
+    DOC_BRANCH: master
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: develop
-    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: master
+    WEBSITE_RELEASE: master
     WEBSITE_USER:
       from_secret: website_user
 
@@ -56,7 +56,7 @@ trigger:
 
 ---
 kind: pipeline
-name: build develop epub
+name: build master epub
 
 platform:
   os: linux
@@ -69,11 +69,11 @@ steps:
   - ./build_epub.sh
   - ./publish_epub.sh
   environment:
-    DOC_BRANCH: develop
+    DOC_BRANCH: master
     WEBSITE_PASSWORD:
       from_secret: website_password
-    WEBSITE_POINT_RELEASE: develop
-    WEBSITE_RELEASE: develop
+    WEBSITE_POINT_RELEASE: master
+    WEBSITE_RELEASE: master
     WEBSITE_USER:
       from_secret: website_user
 
@@ -97,7 +97,7 @@ steps:
   - ./build_html.sh
   - ./publish_html.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: v2019.2.2_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.2
@@ -125,7 +125,7 @@ steps:
   - ./build_pdf.sh
   - ./publish_pdf.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: v2019.2.2_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.2
@@ -153,7 +153,7 @@ steps:
   - ./build_epub.sh
   - ./publish_epub.sh
   environment:
-    DOC_BRANCH: 2019.2
+    DOC_BRANCH: v2019.2.2_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.2
