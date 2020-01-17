@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-./build_env.sh
+. ./build_env.sh
 
 # This is intended to be run in a docker container (possibly using drone)
 # and will change your timezone if you run it on your system.
