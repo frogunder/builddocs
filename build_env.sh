@@ -1,5 +1,9 @@
 #!/bin/bash -ex
 
+export LATEST_RELEASE='2019.2.3'
+export PREVIOUS_RELEASE='2018.3.5'
+export PREVIOUS_RELEASE_DIR='2018.3'
+
 apt-get update
 apt-get install -y python3-pip git fontconfig make
 pip3 install sphinx==2.0.1

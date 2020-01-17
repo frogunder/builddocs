@@ -97,6 +97,7 @@ steps:
   - ./build_html.sh
   - ./publish_html.sh
   environment:
+    BUILD_TYPE: latest
     DOC_BRANCH: v2019.2.3_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -109,6 +110,7 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ---
 kind: pipeline
@@ -125,6 +127,7 @@ steps:
   - ./build_pdf.sh
   - ./publish_pdf.sh
   environment:
+    BUILD_TYPE: latest
     DOC_BRANCH: v2019.2.3_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -137,6 +140,7 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ---
 kind: pipeline
@@ -153,6 +157,7 @@ steps:
   - ./build_epub.sh
   - ./publish_epub.sh
   environment:
+    BUILD_TYPE: latest
     DOC_BRANCH: v2019.2.3_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -165,6 +170,7 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ---
 kind: pipeline
@@ -181,6 +187,7 @@ steps:
   - ./build_html.sh
   - ./publish_html.sh
   environment:
+    BUILD_TYPE: previous
     DOC_BRANCH: v2018.3.5_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -193,6 +200,7 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ---
 kind: pipeline
@@ -209,6 +217,7 @@ steps:
   - ./build_pdf.sh
   - ./publish_pdf.sh
   environment:
+    BUILD_TYPE: previous
     DOC_BRANCH: v2018.3.5_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -221,6 +230,7 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ---
 kind: pipeline
@@ -237,6 +247,7 @@ steps:
   - ./build_epub.sh
   - ./publish_epub.sh
   environment:
+    BUILD_TYPE: previous
     DOC_BRANCH: v2018.3.5_docs
     WEBSITE_PASSWORD:
       from_secret: website_password
@@ -249,5 +260,6 @@ trigger:
   event:
     exclude:
     - pull_request
+    - cron
 
 ...
