@@ -218,7 +218,7 @@ steps:
     WEBSITE_PASSWORD:
       from_secret: website_password
     WEBSITE_POINT_RELEASE: 2019.2.3
-    WEBSITE_RELEASE: 2019.3
+    WEBSITE_RELEASE: 2019.2
     WEBSITE_USER:
       from_secret: website_user
 
@@ -229,7 +229,7 @@ trigger:
 
 ---
 kind: pipeline
-name: build 2019.3 epub
+name: build 2019.2 epub
 
 platform:
   os: linux
