@@ -1,8 +1,8 @@
 #!/bin/bash -ex
 
-export LATEST_RELEASE='2019.2.3'
-export PREVIOUS_RELEASE='2018.3.5'
-export PREVIOUS_RELEASE_DIR='2018.3'
+export LATEST_RELEASE='3000'
+export PREVIOUS_RELEASE='2019.2.3'
+export PREVIOUS_RELEASE_DIR='2019.2'
 
 apt-get update
 apt-get install -y python3-pip git fontconfig make
