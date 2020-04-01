@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-export LATEST_RELEASE='3000'
+export LATEST_RELEASE='3000.1'
 export PREVIOUS_RELEASE='2019.2.3'
 export PREVIOUS_RELEASE_DIR='2019.2'
 
